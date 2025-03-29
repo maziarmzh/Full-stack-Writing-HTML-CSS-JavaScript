@@ -1,8 +1,10 @@
+/* styles.css */
+
 /* Basic Styles */
 body {
     font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
+    margin: auto;
+    padding: auto;
     background-color: #f4f4f9;
     color: #333;
     line-height: 1.6;
@@ -14,6 +16,7 @@ header {
     color: #fff;
     padding: 10px 0;
     text-align: center;
+    position: relative;
 }
 
 header h1 {
@@ -27,10 +30,11 @@ nav {
 nav ul {
     list-style: none;
     padding: 0;
+    display: flex;
+    justify-content: center;
 }
 
 nav ul li {
-    display: inline;
     margin: 0 15px;
 }
 
@@ -168,6 +172,16 @@ main {
     box-sizing: border-box;
 }
 
+#contact input:invalid,
+#contact textarea:invalid {
+    border-color: red;
+}
+
+#contact input:valid,
+#contact textarea:valid {
+    border-color: #ddd;
+}
+
 #contact button {
     padding: 10px 20px;
     background-color: #007BFF;
@@ -187,7 +201,7 @@ footer {
     background-color: #333;
     color: #fff;
     text-align: center;
-    padding: 10px 0;
+    padding: 10px auto;
     position: fixed;
     width: 100%;
     bottom: 0;
@@ -213,4 +227,24 @@ footer {
         flex-direction: column;
         align-items: flex-start;
     }
+}
+
+/* Lightbox */
+#lightbox {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 1000;
+}
+
+#lightbox img {
+    max-width: 90%;
+    max-height: 90%;
+    border-radius: 5px;
 }
